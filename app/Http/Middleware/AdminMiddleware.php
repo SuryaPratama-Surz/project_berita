@@ -9,17 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
-        if($request->routeis('pengguna.*') && Auth::user()-> is_admin !== 1){
-           abort(403, 'USER GA BISA MASUK YAAA DEKKK.');
-        }    
+        if (!Auth::check() || Auth::user()->is_admin !== 1) {
+            abort(403, 'Akses hanya untuk admin.');
+        }
+
         return $next($request);
     }
 }
-

@@ -82,39 +82,28 @@
                        <h2>DASHBOARD ADMIN - BADUTNEWS</h2>
                       </div>
                     </div>
-
                     <div class="row text-center">
-                      <div class="col-md-3 mb-4">
-                        <div class="card">
-                          <div class="card-body bg-success rounded">
-                            <h3 class="card-title text-light">DATA PENGGUNA</h3>
-                            <p class="card-text text-light ">0 DATA</p>
-                            <a href="{{ route('pengguna.index') }}" class="btn btn-dark">LIHAT DATA</a>
-                          </div>
+                      <div class="col-md-4 mb-4">
+                      <div class="card">
+                        <div class="card-body bg-success rounded">
+                        <h3 class="card-title text-light">DATA PENGGUNA</h3>
+                        <p class="card-text text-light ">BEBERAPA TERDATA</p>
+                        <a href="{{ route('pengguna.index') }}" class="btn btn-dark">LIHAT DATA</a>
                         </div>
                       </div>
+                      </div>
 
-                      <div class="col-md-3 mb-4">
+                      <div class="col-md-4 mb-4">
                         <div class="card">
                           <div class="card-body bg-info card-shadow rounded">
                             <h3 class="card-title text-light">DATA KATEGORI</h3>
                             <p class="card-text text-light ">0 DATA</p>
-                            <a href="{{ route('pengguna.index') }}" class="btn btn-dark">LIHAT DATA</a>
+                            <a href="{{ route('kategori.index') }}" class="btn btn-dark">LIHAT DATA</a>
                           </div>
                         </div>
                       </div>
 
-                      <div class="col-md-3 mb-4">
-                        <div class="card">
-                          <div class="card-body bg-danger card-shadow rounded">
-                            <h3 class="card-title text-light">DATA PENULIS</h3>
-                            <p class="card-text text-light ">0 DATA</p>
-                            <a href="{{ route('pengguna.index') }}" class="btn btn-dark">LIHAT DATA</a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-md-3 mb-4">
+                      <div class="col-md-4 mb-4">
                         <div class="card">
                           <div class="card-body bg-warning card-shadow rounded">
                             <h3 class="card-title text-light">ARTIKEL / NEWS</h3>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori;
 use Illuminate\Http\Request;
 
 class KategorisController extends Controller
@@ -11,7 +12,8 @@ class KategorisController extends Controller
      */
     public function index()
     {
-        //
+        $kategori = kategori::all();
+        return view('kategori.index' , compact('kategori'));
     }
 
     /**
@@ -19,7 +21,8 @@ class KategorisController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = kategori::all();
+        return view('kategori.create');
     }
 
     /**
@@ -27,7 +30,16 @@ class KategorisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_kategori' => 'required',
+        ]);
+
+        $kategori = new kategori();
+        $kategori->nama_kategori = $request->nama_kategori;
+
+        $kategori->save();
+
+        return redirect()->route('kategori.index')->with('success', 'Kategori created successfully.');
     }
 
     /**
@@ -57,8 +69,9 @@ class KategorisController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Kategori $kategori)
     {
-        //
+        $kategori->delete(); 
+        return redirect()->back()->with('success', 'Kategori berhasil dihapus!');
     }
 }
