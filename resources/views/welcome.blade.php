@@ -12,29 +12,59 @@
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav>
         @include('layouts.kerangka.navbar2')
     </nav>
 
+    <!-- Main content -->
     <main>
       <div class="container mt-5">
         <div class="row">
-            <div class="col-6">
+            <!-- Berita Utama -->
+            <div class="col-md-8">
                <div class="card">
-                <img src="{{ asset('img/tung.jpg') }}" alt="">
+                   <img src="{{ asset('img/tung.jpg') }}" alt="Berita Image" class="card-img-top">
+                   <div class="card-body">
+                       <h2 class="fw-bold mt-3">SEMPAT VIRAL BEGINI NASIB TUNG TUNG SAHUR SEKARANG</h2>
+                       <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum vestibulum ipsum, et tempor lorem. Integer tincidunt nisi vitae metus posuere, ut tincidunt est luctus.</p>
+                       <a href="#" class="btn btn-primary mt-3">Baca Selengkapnya</a>
+                   </div>
                </div>
-            
-               <h2 class="fw-bold mt-3">SEMPAT VIRAL BEGINI NASIB TUNG TUNG SAHUR SEKARANG</h2>
             </div>
-            <div class="col-4">
-              
+
+            <!-- Artikel Terbaru -->
+            <div class="col-md-4">
+                <h4 class="fw-bold mb-3">Artikel Terbaru</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Artikel 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-link">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Artikel 2</h5>
+                        <p class="card-text">Nullam interdum vestibulum ipsum, et tempor lorem.</p>
+                        <a href="#" class="btn btn-link">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Artikel 3</h5>
+                        <p class="card-text">Curabitur tristique urna nec tortor hendrerit, sit amet consectetur erat vestibulum.</p>
+                        <a href="#" class="btn btn-link">Baca Selengkapnya</a>
+                    </div>
+                </div>
             </div>
         </div>
       </div>
     </main>
 
-  
+    @include('layouts.kerangka.footer')
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </html>
