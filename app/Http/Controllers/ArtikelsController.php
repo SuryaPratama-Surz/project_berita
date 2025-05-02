@@ -25,6 +25,7 @@ class ArtikelsController extends Controller
     {
         $kategori = Kategori::all();
         return view('artikel.create' , compact('kategori'));
+
     }
 
     /**
@@ -53,7 +54,8 @@ class ArtikelsController extends Controller
 
         $artikel->save();
 
-        return redirect()->route('artikel.index')->with('success', 'Artikel created successfully.');
+        return redirect()->route('artikel.index'    )->with('success', 'Artikel created successfully.');
+
     }
 
     /**

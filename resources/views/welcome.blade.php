@@ -19,6 +19,7 @@
 
     <!-- Main content -->
     <main>
+        
       <div class="container mt-5">
         <div class="row">
             <!-- Berita Utama -->
@@ -46,14 +47,14 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <h5 class="card-title">Artikel 2</h5>
-                        <p class="card-text">Nullam interdum vestibulum ipsum, et tempor lorem.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, rerum, cupiditate similique iste esse id maiores quisquam dicta veniam molestiae molestias ea maxime aut perferendis voluptatem vitae saepe! Tenetur, minus!.</p>
                         <a href="#" class="btn btn-link">Baca Selengkapnya</a>
                     </div>
                 </div>
                 <div class="card mt-3">
                     <div class="card-body">
                         <h5 class="card-title">Artikel 3</h5>
-                        <p class="card-text">Curabitur tristique urna nec tortor hendrerit, sit amet consectetur erat vestibulum.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nihil repudiandae fugit officia beatae tempora dolorum quisquam qui nobis rem dicta cupiditate enim eum, reprehenderit, atque aspernatur inventore vitae ullam? tristique urna nec tortor hendrerit, sit amet consectetur erat vestibulum.</p>
                         <a href="#" class="btn btn-link">Baca Selengkapnya</a>
                     </div>
                 </div>
