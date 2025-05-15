@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PenggunasController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FrontController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,3 +31,5 @@ Route::resource('artikel', App\Http\Controllers\ArtikelsController::class);
 Route::get('/admin', function () {
     return view('admin.index');
 })->middleware(['auth'])->name('admin');
+
+Route::get('/', [FrontController::class, 'index']);

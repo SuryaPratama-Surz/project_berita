@@ -16,6 +16,7 @@ class ArtikelsController extends Controller
         $artikel = Artikel::all();
         $kategori = Kategori::all();
         return view('artikel.index', compact('artikel' , 'kategori'));
+        
     }
 
     /**
@@ -54,7 +55,7 @@ class ArtikelsController extends Controller
 
         $artikel->save();
 
-        return redirect()->route('artikel.index'    )->with('success', 'Artikel created successfully.');
+        return redirect()->route('artikel.index')->with('success', 'Artikel created successfully.');
 
     }
 
@@ -63,7 +64,11 @@ class ArtikelsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $artikel = Artikel::findorfail($id);
+        $kategori = Kategori::all();
+        return view('artikel.show' , compact('artikel', 'kategori'));
+        
+
     }
 
     /**
@@ -71,7 +76,8 @@ class ArtikelsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $artikel = Artikel::FindOrFail($id);
+        return view('artikel.edit' , compact('artikel'));
     }
 
     /**
@@ -79,7 +85,35 @@ class ArtikelsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            'id_kategori' => 'required',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:9000',
+        ]);
+
+        $artikel = Artikel::FindOrFail($id);
+
+        $artikel->judul = $request->judul;
+        $artikel->isi = $request->isi;
+        $artikel->id_kategori = $request->id_kategori;
+
+        if ($request->hasFile('foto')) {
+ 
+            $fotoLama = $artikel->foto;
+            if ($fotoLama && file_exists(public_path('images/foto/artikel/' . $fotoLama))) {
+                unlink(public_path('images/foto/artikel/' . $fotoLama));
+            }
+
+            $img = $request->file('foto');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move(public_path('images/foto/artikel'), $name);
+            $artikel->foto = $name;
+
+        }
+        $artikel->save();
+
+        return redirect()->route('artikel.index')->with('success', 'Artikel created successfully.');
     }
 
     /**
@@ -89,7 +123,7 @@ class ArtikelsController extends Controller
     {
         $artikel = Artikel::findOrFail($id);
         if ($artikel->foto) {
-            unlink(public_path('images/artikel/' . $artikel->gambar));
+            unlink(public_path('images/artikel/' . $artikel->foto));
         }
         $artikel->delete();
 
